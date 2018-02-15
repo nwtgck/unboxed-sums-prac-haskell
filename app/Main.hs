@@ -26,6 +26,8 @@ import GHC.Prim
 import GHC.Types
 import GHC.Exts
 
+import qualified SimpleUse
+
 
 xs :: (# Int | Char | Bool #) -> Int
 xs (# i | | #) = i
@@ -106,9 +108,11 @@ myShow (#   |   | c #) = show c
 
 main :: IO ()
 main = do
-  let x :: (# Int | Char | Bool #)
-      x = (# 1 | | #)
-  putStrLn (sumShow x)
-  return ()
-  -- putStrLn (show x)
-  -- putStrLn (myShow x)
+  putStrLn "=============== SimpleUse ==============="
+  SimpleUse.run
+  -- let x :: (# Int | Char | Bool #)
+  --     x = (# 1 | | #)
+  -- putStrLn (sumShow x)
+  -- return ()
+  -- -- putStrLn (show x)
+  -- -- putStrLn (myShow x)
