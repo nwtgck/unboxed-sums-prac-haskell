@@ -6,8 +6,6 @@ module SumShowPrac where
 
 -- (from: https://github.com/gingerhot/haskell-base/blob/dbd1c3f0cf64e8c76c945530a805f7637dcdf777/testsuite/tests/deriving/should_fail/T12512.hs)
 import GHC.Prim
-import GHC.Types
-import GHC.Exts
 
 class SumShow (a :: TYPE rep) where
     sumShow :: a -> String
